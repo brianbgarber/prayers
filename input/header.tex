@@ -1,0 +1,17 @@
+\documentclass[paper=a6,fontsize=3.4mm]{scrartcl}
+\usepackage{lmodern}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+%\pagenumbering{gobble}
+\renewcommand{\familydefault}{\sfdefault}
+\parskip=4pt
+
+% Using newcommand to set up hanging indent variable '\indt'
+\newcommand{\indt}{12mm}
+
+% new environment to create hanging indents across paragraphs
+\let\svpar\par
+\newenvironment{hang}{\hangindent \indt\def\par{\svpar\hangindent
+		\indt\parindent \indt}}
+{\let\par\svpar\parindent 0mm}
